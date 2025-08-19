@@ -7,6 +7,6 @@ public class Message {
     }
 
     public String toString() {
-        return String.format("%s\n%s\n%s\n", horizontalLine, text, horizontalLine);
+        return String.format("    %s\n    %s\n    %s\n", horizontalLine, text, horizontalLine);
     }
 }
