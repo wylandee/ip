@@ -10,6 +10,10 @@ public class Task {
         return (isDone ? "X" : " ");
     }
 
+    public void markAsDone() {
+        this.isDone = true;
+    }
+
     @Override
     public String toString() {
         return String.format("[%s] %s", this.getStatusIcon(), text);
