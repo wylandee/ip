@@ -15,10 +15,19 @@ public class David {
                 Task curr = tl.getTask(i);
                 curr.markAsDone();
                 System.out.println(new MarkMessage(curr.toString()));
-            } else {
-                String line = word + sc.nextLine();
+            } else if (word.equals("deadline")) {
+                String[] line = sc.nextLine().split("/by");
+                tl.addTask(new Deadline(line[0].stripTrailing(), line[1].stripLeading()));
+                System.out.println(new AddMessage(line[0].stripTrailing()));
+            } else if (word.equals("event")) {
+                String[] line = sc.nextLine().split("/from");
+                String[] times = line[1].split("/to");
+                tl.addTask(new Event(line[0].stripTrailing(), times[0].stripLeading().stripTrailing(), times[1].stripLeading()));
+                System.out.println(new AddMessage(line[0].stripTrailing()));
+            } else if (word.equals("todo")){
+                String line = sc.nextLine();
+                tl.addTask(new Todo(line));
                 System.out.println(new AddMessage(line));
-                tl.addTask(new Task(line));
             }
         word = sc.next();
         }
