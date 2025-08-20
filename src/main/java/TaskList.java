@@ -16,6 +16,10 @@ public class TaskList {
         }
     }
 
+    public Task getTask(int i) {
+        return items[i - 1];
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
