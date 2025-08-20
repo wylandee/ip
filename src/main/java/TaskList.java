@@ -27,7 +27,7 @@ public class TaskList {
             if (items[i] == null) {
                 break;
             }
-            sb.append(i + 1).append(". ").append(items[i]).append("\n    ");
+            sb.append("    ").append(i + 1).append(". ").append(items[i]).append("\n");
         }
         return sb.toString();
     }
