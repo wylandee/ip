@@ -21,31 +21,64 @@ public class David {
                     break;
 
                 case "deadline":
-                    String[] line = sc.nextLine().split("/by");
-                    Task dlTask = new Deadline(line[0].stripTrailing(), line[1].stripLeading());
-                    tl.addTask(dlTask);
-                    System.out.println(new AddMessage(dlTask.toString()));
+                    try {
+                        String[] line = sc.nextLine().split("/by");
+                        if (line.length < 2 || line[0].strip().isEmpty() || line[1].strip().isEmpty()) {
+                            throw new DeadlineException("You know the format for deadline is like that right: deadline <task> /by <end>");
+                        }
+                        Task dlTask = new Deadline(line[0].stripTrailing(), line[1].stripLeading());
+                        tl.addTask(dlTask);
+                        System.out.println(new AddMessage(dlTask.toString()));
+                    } catch (DukeException de) {
+                        System.out.println(de.getMessage());
+                    }
                     break;
 
                 case "event":
-                    String[] eventLine = sc.nextLine().split("/from");
-                    String[] times = eventLine[1].split("/to");
-                    Task eventTask = new Event(
-                            eventLine[0].stripTrailing(),
-                            times[0].stripLeading().stripTrailing(),
-                            times[1].stripLeading()
-                    );
-                    tl.addTask(eventTask);
-                    System.out.println(new AddMessage(eventTask.toString()));
+                    try {
+                        String[] eventLine = sc.nextLine().split("/from");
+                        if (eventLine.length < 2) {
+                            throw new EventException("You know event must have /from and /to right");
+                        }
+                        String[] times = eventLine[1].split("/to");
+                        if (times.length < 2) {
+                            throw new EventException("You know the format for event is like that right: event <task> /from <start> /to <end>");
+                        }
+                        Task eventTask = new Event(
+                                eventLine[0].stripTrailing(),
+                                times[0].stripLeading().stripTrailing(),
+                                times[1].stripLeading()
+                        );
+                        tl.addTask(eventTask);
+                        System.out.println(new AddMessage(eventTask.toString()));
+                    } catch (DukeException de) {
+                        System.out.println(de.getMessage());
+                    }
+
                     break;
 
                 case "todo":
-                    String lineTodo = sc.nextLine();
-                    Task tdTask = new Todo(lineTodo);
-                    tl.addTask(tdTask);
-                    System.out.println(new AddMessage(tdTask.toString()));
+                    try {
+                        String lineTodo = sc.nextLine();
+                        if (lineTodo.isEmpty()) {
+                            throw new TodoException("todo what leh? Don't leave the task empty can or not?");
+                        }
+                        Task tdTask = new Todo(lineTodo);
+                        tl.addTask(tdTask);
+                        System.out.println(new AddMessage(tdTask.toString()));
+
+                    } catch (DukeException de) {
+                        System.out.println(de.getMessage());
+                    }
                     break;
 
+                default:
+                    try {
+                        throw new NoCommandException("Eh idk what you saying bro, use one of the commands");
+                    } catch (DukeException de) {
+                        System.out.println(de.getMessage());
+                    }
+                    break;
             }
         word = sc.next();
         }
