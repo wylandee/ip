@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class TaskList {
-    Task[] items;
+    private Task[] items;
 
     public TaskList() {
         items = new Task[100];

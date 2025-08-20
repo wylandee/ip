@@ -1,6 +1,6 @@
 public class Message {
-    String horizontalLine = "----------------------------------";
-    String text;
+    private final String horizontalLine = "----------------------------------";
+    private String text;
 
     public Message(String text){
         this.text = text;
