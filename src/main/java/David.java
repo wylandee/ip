@@ -16,8 +16,9 @@ public class David {
                 curr.markAsDone();
                 System.out.println(new MarkMessage(curr.toString()));
             } else {
-                System.out.println(new AddMessage(word));
-                tl.addTask(new Task(word));
+                String line = word + sc.nextLine();
+                System.out.println(new AddMessage(line));
+                tl.addTask(new Task(line));
             }
         word = sc.next();
         }
