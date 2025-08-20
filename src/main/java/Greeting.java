@@ -1,7 +1,7 @@
 public class Greeting extends Message{
 
     public Greeting() {
-        super("Hello! I'm David\n    What can I do for you?");
+        super("Eh David here\n    What you want me do for you?");
     }
     @Override
     public String toString() {

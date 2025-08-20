@@ -1,7 +1,7 @@
 public class MarkMessage extends Message {
 
     public MarkMessage(String text) {
-        super("I have marked this task as done:\n    " + text);
+        super("Ok I mark as done liao:\n    " + text);
     }
 
     @Override

@@ -1,7 +1,7 @@
 public class Goodbye extends Message{
 
     public Goodbye() {
-        super("Bye. Hope to see you again soon!");
+        super("I zao liao ah. See you again soon!");
     }
     @Override
     public String toString() {
