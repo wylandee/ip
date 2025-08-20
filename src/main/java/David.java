@@ -22,25 +22,28 @@ public class David {
 
                 case "deadline":
                     String[] line = sc.nextLine().split("/by");
-                    tl.addTask(new Deadline(line[0].stripTrailing(), line[1].stripLeading()));
-                    System.out.println(new AddMessage(line[0].stripTrailing()));
+                    Task dlTask = new Deadline(line[0].stripTrailing(), line[1].stripLeading());
+                    tl.addTask(dlTask);
+                    System.out.println(new AddMessage(dlTask.toString()));
                     break;
 
                 case "event":
                     String[] eventLine = sc.nextLine().split("/from");
                     String[] times = eventLine[1].split("/to");
-                    tl.addTask(new Event(
+                    Task eventTask = new Event(
                             eventLine[0].stripTrailing(),
                             times[0].stripLeading().stripTrailing(),
                             times[1].stripLeading()
-                    ));
-                    System.out.println(new AddMessage(eventLine[0].stripTrailing()));
+                    );
+                    tl.addTask(eventTask);
+                    System.out.println(new AddMessage(eventTask.toString()));
                     break;
 
                 case "todo":
                     String lineTodo = sc.nextLine();
-                    tl.addTask(new Todo(lineTodo));
-                    System.out.println(new AddMessage(lineTodo));
+                    Task tdTask = new Todo(lineTodo);
+                    tl.addTask(tdTask);
+                    System.out.println(new AddMessage(tdTask.toString()));
                     break;
 
             }
