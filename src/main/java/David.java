@@ -72,6 +72,12 @@ public class David {
                     }
                     break;
 
+                case "delete":
+                    int j = sc.nextInt();
+                    Task deletedTask = tl.deleteTask(j);
+                    System.out.println(new DeleteMessage(deletedTask.toString()));
+                    break;
+
                 default:
                     try {
                         throw new NoCommandException("Eh idk what you saying bro, use one of the commands");
