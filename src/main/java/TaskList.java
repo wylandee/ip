@@ -1,33 +1,25 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class TaskList {
-    private Task[] items;
+    private ArrayList<Task> items;
 
     public TaskList() {
-        items = new Task[100];
+        items = new ArrayList<>();
     }
 
     public void addTask(Task task) {
-        for (int i = 0; i < 100; i++) {
-            if (items[i] == null) {
-                items[i] = task;
-                break;
-            }
-        }
+        items.add(task);
     }
 
     public Task getTask(int i) {
-        return items[i - 1];
+        return items.get(i - 1);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 100; i++) {
-            if (items[i] == null) {
-                break;
-            }
-            sb.append("    ").append(i + 1).append(". ").append(items[i]).append("\n");
+        for (int i = 0; i < items.size(); i++) {
+            sb.append("    ").append(i + 1).append(". ").append(items.get(i)).append("\n");
         }
         return sb.toString();
     }
