@@ -15,6 +15,10 @@ public class TaskList {
         return items.get(i - 1);
     }
 
+    public Task deleteTask(int i) {
+        return items.remove(i - 1);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
