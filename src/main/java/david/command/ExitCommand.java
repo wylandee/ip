@@ -1,4 +1,4 @@
-package command;
+package david.command;
 
 public class ExitCommand extends Command {
     @Override

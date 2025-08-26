@@ -1,9 +1,11 @@
-import command.Command;
-import exception.DukeException;
-import parser.Parser;
-import storage.Storage;
-import task.TaskList;
-import ui.Ui;
+package david;
+
+import david.command.Command;
+import david.exception.DukeException;
+import david.parser.Parser;
+import david.storage.Storage;
+import david.task.TaskList;
+import david.ui.Ui;
 
 public class David {
     private Storage storage;

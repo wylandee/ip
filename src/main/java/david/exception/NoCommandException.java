@@ -1,4 +1,4 @@
-package exception;
+package david.exception;
 
 public class NoCommandException extends DukeException {
     public NoCommandException(String message) {

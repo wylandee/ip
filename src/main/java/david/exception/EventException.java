@@ -1,4 +1,4 @@
-package exception;
+package david.exception;
 
 public class EventException extends DukeException {
     public EventException(String message) {

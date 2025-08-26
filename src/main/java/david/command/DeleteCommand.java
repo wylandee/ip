@@ -1,4 +1,4 @@
-package command;
+package david.command;
 
 public class DeleteCommand extends Command {
     private int index;
@@ -14,7 +14,7 @@ public class DeleteCommand extends Command {
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = tasks.deleteTask(index);
-        ui.showMessage("Ok I this task kenna remove liao:\n"     + task);
+        ui.showMessage("Ok I this david.task kenna remove liao:\n"     + task);
         storage.save(tasks);
     }
 }

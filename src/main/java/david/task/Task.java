@@ -1,4 +1,4 @@
-package task;
+package david.task;
 
 public class Task {
     private String text;

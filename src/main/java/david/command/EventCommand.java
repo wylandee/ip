@@ -1,4 +1,4 @@
-package command;
+package david.command;
 
 public class EventCommand extends Command {
     private String description;
@@ -13,7 +13,7 @@ public class EventCommand extends Command {
 
         String[] times = parts[1].split("/to", 2);
         if (times.length < 2) {
-            throw new EventException("You know the format for event is like that right: event <task> /from <start> /to <end>");
+            throw new EventException("You know the format for event is like that right: event <david.task> /from <start> /to <end>");
         }
 
         this.description = parts[0].trim();
@@ -25,7 +25,7 @@ public class EventCommand extends Command {
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = new Event(description, from, to);
         tasks.addTask(task);
-        ui.showMessage("    I add this task liao:\n    " + task);
+        ui.showMessage("    I add this david.task liao:\n    " + task);
         storage.save(tasks);
     }
 }

@@ -1,8 +1,8 @@
-package parser;
+package david.parser;
 
-import command.*;
-import exception.DukeException;
-import exception.NoCommandException;
+import david.command.*;
+import david.exception.DukeException;
+import david.exception.NoCommandException;
 
 public class Parser {
     public static Command parse(String fullCommand) throws DukeException {
