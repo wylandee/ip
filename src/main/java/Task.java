@@ -10,8 +10,16 @@ public class Task {
         return (isDone ? "X" : " ");
     }
 
+    public boolean isDone() {
+        return this.isDone;
+    }
+
     public void markAsDone() {
         this.isDone = true;
+    }
+
+    public String getText() {
+        return this.text;
     }
 
     @Override
