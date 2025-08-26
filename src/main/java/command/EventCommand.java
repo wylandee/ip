@@ -1,3 +1,5 @@
+package command;
+
 public class EventCommand extends Command {
     private String description;
     private String from;

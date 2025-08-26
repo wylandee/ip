@@ -1,3 +1,5 @@
+package command;
+
 public class DeadlineCommand extends Command {
     private String description;
     private String by;
