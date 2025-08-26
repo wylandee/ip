@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class David {
     private Storage storage;
     private TaskList tasks;
