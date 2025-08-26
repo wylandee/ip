@@ -64,9 +64,9 @@ public class Storage {
         return task;
     }
 
-    public void save(ArrayList<Task> tasks) {
+    public void save(TaskList tl) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath.toFile()))) {
-            for (Task t : tasks) {
+            for (Task t : tl.getTasks()) {
                 bw.write(formatTask(t));
                 bw.newLine();
             }
