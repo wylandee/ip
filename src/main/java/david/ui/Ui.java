@@ -1,3 +1,5 @@
+package david.ui;
+
 import java.util.Scanner;
 
 public class Ui {
