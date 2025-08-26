@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
 
 public class Storage {
     private final Path filePath;
@@ -76,14 +77,16 @@ public class Storage {
 
     private String formatTask(Task t) {
         String status = t. isDone() ? "1" : "0";
+        DateTimeFormatter saveFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+
         if (t instanceof Todo) {
             return "T | " + status + " | " + t.getText();
         } else if (t instanceof Deadline) {
             Deadline d = (Deadline) t;
-            return "D | " + status + " | " + d.getText() + " | " + d.getBy();
+            return "D | " + status + " | " + d.getText() + " | " + d.getBy().format(saveFormat);
         } else if (t instanceof Event) {
             Event e = (Event) t;
-            return "E | " + status + " | " + e.getText() + " | " + e.getFrom() + " | " + e.getTo();
+            return "E | " + status + " | " + e.getText() + " | " + e.getFrom().format(saveFormat) + " | " + e.getTo().format(saveFormat);
         }
         return "";
     }
