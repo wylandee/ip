@@ -13,7 +13,7 @@ public class TodoCommand extends Command {
 
     public TodoCommand(String args) throws DukeException {
         if (args.trim().isEmpty()) {
-            throw new TodoException("todo what leh? Don't leave the david.task empty can or not?");
+            throw new TodoException("todo what leh? Don't leave the task empty can or not?");
         }
         this.description = args.trim();
     }
@@ -22,7 +22,7 @@ public class TodoCommand extends Command {
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = new Todo(description);
         tasks.addTask(task);
-        ui.showMessage("    I add this david.task liao:\n    " + task);
+        ui.showMessage("    I add this task liao:\n    " + task);
         storage.save(tasks);
     }
 }

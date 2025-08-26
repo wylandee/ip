@@ -21,7 +21,7 @@ public class EventCommand extends Command {
 
         String[] times = parts[1].split("/to", 2);
         if (times.length < 2) {
-            throw new EventException("You know the format for event is like that right: event <david.task> /from <start> /to <end>");
+            throw new EventException("You know the format for event is like that right: event <task> /from <start> /to <end>");
         }
 
         this.description = parts[0].trim();

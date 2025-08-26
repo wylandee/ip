@@ -1,20 +1,20 @@
     ----------------------------------
-    Eh david.David here
+    Eh David here
     What you want me do for you?
     ----------------------------------
 
     ----------------------------------
-    I add this david.task liao:
+    I add this task liao:
     [T][ ]  borrow book
     ----------------------------------
 
     ----------------------------------
-    I add this david.task liao:
+    I add this task liao:
     [D][ ]  return book (by: Sunday)
     ----------------------------------
 
     ----------------------------------
-    I add this david.task liao:
+    I add this task liao:
     [E][ ]  project meeting (from: Mon 2pm to: 4pm)
     ----------------------------------
 
