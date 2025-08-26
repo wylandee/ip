@@ -1,5 +1,13 @@
 package david.command;
 
+import david.task.Task;
+import david.task.Event;
+import david.task.TaskList;
+import david.ui.Ui;
+import david.storage.Storage;
+import david.exception.DukeException;
+import david.exception.EventException;
+
 public class EventCommand extends Command {
     private String description;
     private String from;
