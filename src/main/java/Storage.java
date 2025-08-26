@@ -62,4 +62,29 @@ public class Storage {
         }
         return task;
     }
+
+    public void save(ArrayList<Task> tasks) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath.toFile()))) {
+            for (Task t : tasks) {
+                bw.write(formatTask(t));
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving tasks: " + e.getMessage());
+        }
+    }
+
+    private String formatTask(Task t) {
+        String status = t. isDone() ? "1" : "0";
+        if (t instanceof Todo) {
+            return "T | " + status + " | " + t.getText();
+        } else if (t instanceof Deadline) {
+            Deadline d = (Deadline) t;
+            return "D | " + status + " | " + d.getText() + " | " + d.getBy();
+        } else if (t instanceof Event) {
+            Event e = (Event) t;
+            return "E | " + status + " | " + e.getText() + " | " + e.getFrom() + " | " + e.getTo();
+        }
+        return "";
+    }
 }

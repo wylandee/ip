@@ -2,13 +2,16 @@ import java.util.ArrayList;
 
 public class TaskList {
     private ArrayList<Task> items;
+    private final Storage storage;
 
-    public TaskList() {
-        items = new ArrayList<>();
+    public TaskList(Storage storage) {
+        this.storage = storage;
+        items = new ArrayList<>(this.storage.load());
     }
 
     public void addTask(Task task) {
         items.add(task);
+        storage.save(this.items);
     }
 
     public Task getTask(int i) {
@@ -16,7 +19,14 @@ public class TaskList {
     }
 
     public Task deleteTask(int i) {
-        return items.remove(i - 1);
+        Task deleted = items.remove(i - 1);
+        storage.save(this.items);
+        return deleted;
+    }
+
+    public void markAsDone(int i) {
+        this.getTask(i).markAsDone();
+        storage.save(this.items);
     }
 
     @Override
