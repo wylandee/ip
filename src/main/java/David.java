@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class David {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        TaskList tl = new TaskList();
+        Storage storage = new Storage("./data/david.txt");
+        TaskList tl = new TaskList(storage);
 
         System.out.println(new Greeting());
         String word = sc.next();
@@ -16,7 +17,7 @@ public class David {
                 case "mark":
                     int i = sc.nextInt();
                     Task curr = tl.getTask(i);
-                    curr.markAsDone();
+                    tl.markAsDone(i);
                     System.out.println(new MarkMessage(curr.toString()));
                     break;
 
