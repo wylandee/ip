@@ -8,8 +8,8 @@ import david.command.ExitCommand;
 import david.command.ListCommand;
 import david.command.MarkCommand;
 import david.command.TodoCommand;
+import david.exception.FindCommand;
 import david.exception.DukeException;
-import david.exception.FindException;
 import david.exception.NoCommandException;
 
 /**
