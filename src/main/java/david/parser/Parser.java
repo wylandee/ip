@@ -5,10 +5,10 @@ import david.command.DeadlineCommand;
 import david.command.DeleteCommand;
 import david.command.EventCommand;
 import david.command.ExitCommand;
+import david.command.FindCommand;
 import david.command.ListCommand;
 import david.command.MarkCommand;
 import david.command.TodoCommand;
-import david.exception.FindCommand;
 import david.exception.DukeException;
 import david.exception.NoCommandException;
 
