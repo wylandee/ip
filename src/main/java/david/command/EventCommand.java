@@ -8,6 +8,9 @@ import david.storage.Storage;
 import david.exception.DukeException;
 import david.exception.EventException;
 
+/**
+ * Represents a command to create an Event task.
+ */
 public class EventCommand extends Command {
     private String description;
     private String from;
@@ -29,6 +32,13 @@ public class EventCommand extends Command {
         this.to = times[1].trim();
     }
 
+    /**
+     * Creates an Event task and adds it into the user's TaskList.
+     * @param tasks List of Tasks.
+     * @param ui User interface of chatbot.
+     * @param storage User's data storage.
+     * @throws DukeException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
+     */
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = new Event(description, from, to);

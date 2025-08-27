@@ -3,6 +3,9 @@ package david.task;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a Task with a start and end time.
+ */
 public class Event extends Task {
     private LocalDateTime from;
     private LocalDateTime to;

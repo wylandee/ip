@@ -1,5 +1,8 @@
 package david.task;
 
+/**
+ * Represents a Task
+ */
 public class Task {
     private String text;
     private boolean isDone;
@@ -16,6 +19,9 @@ public class Task {
         return this.isDone;
     }
 
+    /**
+     * Marks Task as done.
+     */
     public void markAsDone() {
         this.isDone = true;
     }

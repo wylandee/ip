@@ -7,6 +7,9 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a location to store data from the user.
+ */
 public class Storage {
     private final Path filePath;
 
@@ -15,6 +18,9 @@ public class Storage {
         checkFileAndFolderExists();
     }
 
+    /**
+     * Checks if the data.txt file and parent directory exists. If not, creates them.
+     */
     private void checkFileAndFolderExists() {
         try {
             if (!Files.exists(filePath.getParent())) {
@@ -28,6 +34,10 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the users data from the previous session from data.txt.
+     * @return The list of tasks from the user's previous sesssion.
+     */
     public ArrayList<Task> load() {
         ArrayList<Task> tasks = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath.toFile()))) {
@@ -44,6 +54,11 @@ public class Storage {
         return tasks;
     }
 
+    /**
+     * Process task string and create a new task based on the task type.
+     * @param line Task string.
+     * @return Task in the specific task type
+     */
     private Task parseTask(String line) {
         String[] parts = line.split(" \\| ");
         String taskType = parts[0];
@@ -68,6 +83,10 @@ public class Storage {
         return task;
     }
 
+    /**
+     * Saves user's TaskList into data.txt.
+     * @param tl User's current TaskList.
+     */
     public void save(TaskList tl) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath.toFile()))) {
             for (Task t : tl.getTasks()) {
@@ -79,6 +98,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Formats the Task into the string format for saving into data.txt.
+     * @param t Task
+     * @return String of task in save data format.
+     */
     private String formatTask(Task t) {
         String status = t. isDone() ? "1" : "0";
         DateTimeFormatter saveFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");

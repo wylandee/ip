@@ -8,6 +8,9 @@ import david.storage.Storage;
 import david.exception.DukeException;
 import david.exception.TodoException;
 
+/**
+ * Represents a command to create a Todo task.
+ */
 public class TodoCommand extends Command {
     private String description;
 
@@ -18,6 +21,13 @@ public class TodoCommand extends Command {
         this.description = args.trim();
     }
 
+    /**
+     * Creates a Todo task and adds it into the user's TaskList.
+     * @param tasks List of Tasks.
+     * @param ui User interface of chatbot.
+     * @param storage User's data storage.
+     * @throws DukeException If user does not provide task description.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = new Todo(description);

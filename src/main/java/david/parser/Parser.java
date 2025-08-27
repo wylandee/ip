@@ -4,7 +4,16 @@ import david.command.*;
 import david.exception.DukeException;
 import david.exception.NoCommandException;
 
+/**
+ * Processes the command string and decides which command to execute.
+ */
 public class Parser {
+    /**
+     * Processes the command string and decides which command to execute.
+     * @param fullCommand Command string.
+     * @return Command.
+     * @throws DukeException If command does not exist in the given list of commands.
+     */
     public static Command parse(String fullCommand) throws DukeException {
         String[] parts = fullCommand.split(" ", 2);
         String commandWord = parts[0];

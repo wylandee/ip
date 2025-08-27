@@ -7,6 +7,9 @@ import david.storage.Storage;
 import david.task.TaskList;
 import david.ui.Ui;
 
+/**
+ * Entrypoint class for David chatbot.
+ */
 public class David {
     private Storage storage;
     private TaskList tasks;
@@ -18,6 +21,9 @@ public class David {
         tasks = new TaskList(storage);
     }
 
+    /**
+     * Starts up chatbot.
+     */
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
