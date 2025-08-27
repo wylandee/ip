@@ -1,0 +1,25 @@
+package david.command;
+
+import david.exception.FindException;
+
+import david.exception.DukeException;
+import david.storage.Storage;
+import david.task.TaskList;
+import david.ui.Ui;
+
+public class FindCommand extends Command {
+    String keyword;
+
+    public FindCommand(String args) throws DukeException {
+        if (args.trim().isEmpty()) {
+            throw new FindException("Find what leh? Don't leave the keyword empty can or not?");
+        }
+        this.keyword = args.trim();
+    }
+
+    @Override
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+        TaskList tl = tasks.findTasks(keyword);
+        ui.showMessage("    Eh here is your matching tasks ok, I took very long to find:\n" + tl);
+    }
+}
