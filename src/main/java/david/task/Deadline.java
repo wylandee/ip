@@ -3,6 +3,9 @@ package david.task;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a Task with a deadline
+ */
 public class Deadline extends Task {
     private LocalDateTime by;
 

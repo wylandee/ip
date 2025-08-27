@@ -6,6 +6,9 @@ import david.ui.Ui;
 import david.storage.Storage;
 import david.exception.DukeException;
 
+/**
+ * Represents a command to delete a task.
+ */
 public class DeleteCommand extends Command {
     private int index;
 
@@ -17,6 +20,13 @@ public class DeleteCommand extends Command {
         }
     }
 
+    /**
+     * Deletes the Task at the given in the user's TaskList.
+     * @param tasks List of Tasks.
+     * @param ui User interface of chatbot.
+     * @param storage User's data storage.
+     * @throws DukeException If the user does not provide an index after delete.
+     */
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Task task = tasks.deleteTask(index);

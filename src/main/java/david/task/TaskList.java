@@ -4,6 +4,9 @@ import david.storage.Storage;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a list of Tasks.
+ */
 public class TaskList {
     private ArrayList<Task> items;
     private Storage storage;
@@ -17,6 +20,10 @@ public class TaskList {
         items = new ArrayList<>();
     }
 
+    /**
+     * Adds a Task into the list.
+     * @param task Task
+     */
     public void addTask(Task task) {
         items.add(task);
     }
@@ -29,15 +36,28 @@ public class TaskList {
         return items;
     }
 
+    /**
+     * Returns the number of Tasks in the list.
+     * @return Number of Tasks in list.
+     */
     public int size() {
         return this.getTasks().size();
     }
 
+    /**
+     * Deletes the Task at index i - 1, returns the deleted Task.
+     * @param i index of Task
+     * @return deleted Task.
+     */
     public Task deleteTask(int i) {
         Task deleted = items.remove(i - 1);
         return deleted;
     }
 
+    /**
+     * Mark Task in list as done.
+     * @param i index of Task
+     */
     public void markAsDone(int i) {
         this.getTask(i).markAsDone();
     }
