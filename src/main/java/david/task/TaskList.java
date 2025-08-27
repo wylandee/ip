@@ -62,6 +62,21 @@ public class TaskList {
         this.getTask(i).markAsDone();
     }
 
+    public TaskList findTasks(String keyword) {
+        TaskList temp = new TaskList();
+
+        for (Task t : this.items) {
+            String[] words = t.getText().split(" ");
+            for (String word : words) {
+                if (word.equals(keyword)) {
+                    temp.addTask(t);
+                    break;
+                }
+            }
+        }
+        return temp;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
