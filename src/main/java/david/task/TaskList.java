@@ -13,6 +13,10 @@ public class TaskList {
         items = new ArrayList<>(this.storage.load());
     }
 
+    public TaskList() {
+        items = new ArrayList<>();
+    }
+
     public void addTask(Task task) {
         items.add(task);
     }
@@ -23,6 +27,10 @@ public class TaskList {
 
     public ArrayList<Task> getTasks() {
         return items;
+    }
+
+    public int size() {
+        return this.getTasks().size();
     }
 
     public Task deleteTask(int i) {
