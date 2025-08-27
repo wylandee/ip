@@ -35,6 +35,6 @@ shadowJar {
     archiveFileName = "david.jar"
 }
 
-run{
+run {
     standardInput = System.in
 }

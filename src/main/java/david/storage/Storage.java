@@ -1,11 +1,21 @@
 package david.storage;
 
-import david.task.*;
-
-import java.io.*;
-import java.nio.file.*;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import david.task.Deadline;
+import david.task.Event;
+import david.task.Task;
+import david.task.TaskList;
+import david.task.Todo;
 
 /**
  * Represents a location to store data from the user.
@@ -67,15 +77,15 @@ public class Storage {
 
         Task task = null;
         switch (taskType) {
-            case "T":
-                task = new Todo(desc);
-                break;
-            case "D":
-                task = new Deadline(desc, parts[3]);
-                break;
-            case "E":
-                task = new Event(desc, parts[3], parts[4]);
-                break;
+        case "T":
+            task = new Todo(desc);
+            break;
+        case "D":
+            task = new Deadline(desc, parts[3]);
+            break;
+        case "E":
+            task = new Event(desc, parts[3], parts[4]);
+            break;
         }
         if (task != null && isDone) {
             task.markAsDone();
@@ -104,7 +114,7 @@ public class Storage {
      * @return String of task in save data format.
      */
     private String formatTask(Task t) {
-        String status = t. isDone() ? "1" : "0";
+        String status = t.isDone() ? "1" : "0";
         DateTimeFormatter saveFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
 
         if (t instanceof Todo) {

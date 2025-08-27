@@ -1,9 +1,9 @@
 package david.command;
 
+import david.exception.DukeException;
+import david.storage.Storage;
 import david.task.TaskList;
 import david.ui.Ui;
-import david.storage.Storage;
-import david.exception.DukeException;
 
 /**
  * Represents a command given by the user input

@@ -6,6 +6,7 @@ package david.task;
 public class Task {
     private String text;
     private boolean isDone;
+
     public Task(String text) {
         this.text = text;
         this.isDone = false;

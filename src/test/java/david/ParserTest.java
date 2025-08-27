@@ -1,10 +1,14 @@
 package david.parser;
 
-import david.command.*;
-import david.exception.DukeException;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import david.command.Command;
+import david.command.DeadlineCommand;
+import david.command.TodoCommand;
+import david.exception.DukeException;
 
 class ParserTest {
 

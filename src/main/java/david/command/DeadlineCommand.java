@@ -1,12 +1,12 @@
 package david.command;
 
-import david.task.Task;
+import david.exception.DeadlineException;
+import david.exception.DukeException;
+import david.storage.Storage;
 import david.task.Deadline;
+import david.task.Task;
 import david.task.TaskList;
 import david.ui.Ui;
-import david.storage.Storage;
-import david.exception.DukeException;
-import david.exception.DeadlineException;
 
 /**
  * Represents a command to create a Deadline task.
