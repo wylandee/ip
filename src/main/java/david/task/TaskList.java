@@ -1,8 +1,8 @@
 package david.task;
 
-import david.storage.Storage;
-
 import java.util.ArrayList;
+
+import david.storage.Storage;
 
 public class TaskList {
     private ArrayList<Task> items;

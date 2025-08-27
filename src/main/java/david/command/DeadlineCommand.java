@@ -1,12 +1,12 @@
 package david.command;
 
-import david.task.Task;
+import david.exception.DeadlineException;
+import david.exception.DukeException;
+import david.storage.Storage;
 import david.task.Deadline;
+import david.task.Task;
 import david.task.TaskList;
 import david.ui.Ui;
-import david.storage.Storage;
-import david.exception.DukeException;
-import david.exception.DeadlineException;
 
 public class DeadlineCommand extends Command {
     private String description;

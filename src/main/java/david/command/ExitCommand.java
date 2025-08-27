@@ -1,8 +1,8 @@
 package david.command;
 
+import david.storage.Storage;
 import david.task.TaskList;
 import david.ui.Ui;
-import david.storage.Storage;
 
 public class ExitCommand extends Command {
     @Override

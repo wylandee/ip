@@ -1,9 +1,11 @@
 package david.task;
 
-import david.exception.DukeException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import david.exception.DukeException;
 
 class TaskListTest {
 
