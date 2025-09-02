@@ -41,6 +41,10 @@ public class David {
         }
     }
 
+    public String getResponse(String input) {
+        return "David heard: " + input;
+    }
+
     public static void main(String[] args) {
         new David("data/tasks.txt").run();
     }
