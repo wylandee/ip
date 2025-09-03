@@ -23,7 +23,6 @@ public class TodoCommand extends Command {
     /**
      * Creates a Todo task and adds it into the user's TaskList.
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      * @throws DavidException If user does not provide task description.
      */
@@ -31,7 +30,6 @@ public class TodoCommand extends Command {
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Todo(description);
         tasks.addTask(task);
-        //ui.showMessage("    I add this task liao:\n    " + task);
         storage.save(tasks);
         return "    I add this task liao:\n    " + task;
     }

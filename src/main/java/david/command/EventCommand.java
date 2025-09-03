@@ -34,7 +34,6 @@ public class EventCommand extends Command {
     /**
      * Creates an Event task and adds it into the user's TaskList.
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      * @throws DavidException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
      */
@@ -42,7 +41,6 @@ public class EventCommand extends Command {
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Event(description, from, to);
         tasks.addTask(task);
-        //ui.showMessage("    I add this david.task liao:\n    " + task);
         storage.save(tasks);
         return     "I add this david.task liao:\n    " + task;
     }

@@ -11,7 +11,6 @@ public class ListCommand extends Command {
     /**
      * Gets Ui to show TaskList.
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      */
     @Override

@@ -26,7 +26,6 @@ public class DeadlineCommand extends Command {
     /**
      * Creates a Deadline task and adds it into the user's TaskList.
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      * @throws DavidException If the user's input does not follow the deadline format: deadline <task> /by <end>.
      */
@@ -34,7 +33,6 @@ public class DeadlineCommand extends Command {
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Deadline(description, by);
         tasks.addTask(task);
-        //ui.showMessage("    I add this task liao:\n    " + task);
         storage.save(tasks);
         return "    I add this task liao:\n    " + task;
     }

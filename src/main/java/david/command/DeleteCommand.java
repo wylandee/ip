@@ -22,14 +22,12 @@ public class DeleteCommand extends Command {
     /**
      * Deletes the Task at the given in the user's TaskList.
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      * @throws DavidException If the user does not provide an index after delete.
      */
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = tasks.deleteTask(index);
-        //ui.showMessage("Ok I this task kenna remove liao:\n" + task);
         storage.save(tasks);
         return "Ok I this task kenna remove liao:\n" + task;
     }

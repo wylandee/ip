@@ -11,7 +11,6 @@ public abstract class Command {
     /**
      * Executes logic of specific command
      * @param tasks List of Tasks.
-     * @param ui User interface of chatbot.
      * @param storage User's data storage.
      * @throws DavidException If command input is invalid.
      */
