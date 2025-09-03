@@ -2,7 +2,6 @@ package david.command;
 
 import david.storage.Storage;
 import david.task.TaskList;
-import david.ui.Ui;
 
 /**
  * Represents a command to show TaskList.
