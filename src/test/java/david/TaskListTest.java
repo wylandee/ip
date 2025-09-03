@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import david.exception.DukeException;
+import david.exception.DavidException;
 
 class TaskListTest {
 
@@ -22,7 +22,7 @@ class TaskListTest {
     }
 
     @Test
-    void deleteTask_removesCorrectTask() throws DukeException {
+    void deleteTask_removesCorrectTask() throws DavidException {
         TaskList tl = new TaskList();
         Task t1 = new Todo("Task 1");
         Task t2 = new Todo("Task 2");
@@ -37,7 +37,7 @@ class TaskListTest {
     }
 
     @Test
-    void markAsDone_updatesStatus() throws DukeException {
+    void markAsDone_updatesStatus() throws DavidException {
         TaskList tl = new TaskList();
         Task t = new Todo("Finish homework");
         tl.addTask(t);
