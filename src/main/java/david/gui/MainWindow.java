@@ -2,10 +2,8 @@ package david.gui;
 
 import david.David;
 import david.command.Command;
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.parser.Parser;
-import david.storage.Storage;
-import david.task.TaskList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -56,7 +54,7 @@ public class MainWindow extends AnchorPane {
                     DialogBox.getDukeDialog(response, dukeImage)
             );
             userInput.clear();
-        } catch (DukeException e) {
+        } catch (DavidException e) {
             String input = userInput.getText();
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),

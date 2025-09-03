@@ -1,9 +1,8 @@
 package david.command;
 
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.storage.Storage;
 import david.task.TaskList;
-import david.ui.Ui;
 
 /**
  * Represents a command given by the user input
@@ -14,9 +13,9 @@ public abstract class Command {
      * @param tasks List of Tasks.
      * @param ui User interface of chatbot.
      * @param storage User's data storage.
-     * @throws DukeException If command input is invalid.
+     * @throws DavidException If command input is invalid.
      */
-    public abstract String execute(TaskList tasks, Storage storage) throws DukeException;
+    public abstract String execute(TaskList tasks, Storage storage) throws DavidException;
 
     /**
      * Makes sure chatbot does not stop.

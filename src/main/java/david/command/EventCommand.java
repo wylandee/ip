@@ -1,12 +1,11 @@
 package david.command;
 
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.exception.EventException;
 import david.storage.Storage;
 import david.task.Event;
 import david.task.Task;
 import david.task.TaskList;
-import david.ui.Ui;
 
 /**
  * Represents a command to create an Event task.
@@ -16,7 +15,7 @@ public class EventCommand extends Command {
     private String from;
     private String to;
 
-    public EventCommand(String args) throws DukeException {
+    public EventCommand(String args) throws DavidException {
         String[] parts = args.split("/from", 2);
         if (parts.length < 2) {
             throw new EventException("You know event must have /from and /to right");
@@ -37,10 +36,10 @@ public class EventCommand extends Command {
      * @param tasks List of Tasks.
      * @param ui User interface of chatbot.
      * @param storage User's data storage.
-     * @throws DukeException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
+     * @throws DavidException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
      */
     @Override
-    public String execute(TaskList tasks, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Event(description, from, to);
         tasks.addTask(task);
         //ui.showMessage("    I add this david.task liao:\n    " + task);

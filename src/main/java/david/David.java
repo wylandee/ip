@@ -1,7 +1,7 @@
 package david;
 
 import david.command.Command;
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.parser.Parser;
 import david.storage.Storage;
 import david.task.TaskList;
@@ -35,7 +35,7 @@ public class David {
                 //c.execute(tasks, ui, storage);
                 ui.showLine();
                 isExit = c.isExit();
-            } catch (DukeException e) {
+            } catch (DavidException e) {
                 ui.showError(e.getMessage());
             }
         }

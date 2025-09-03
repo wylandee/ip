@@ -1,10 +1,9 @@
 package david.command;
 
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.storage.Storage;
 import david.task.Task;
 import david.task.TaskList;
-import david.ui.Ui;
 
 /**
  * Represents a command to delete a task.
@@ -12,11 +11,11 @@ import david.ui.Ui;
 public class DeleteCommand extends Command {
     private int index;
 
-    public DeleteCommand(String args) throws DukeException {
+    public DeleteCommand(String args) throws DavidException {
         try {
             this.index = Integer.parseInt(args.trim());
         } catch (NumberFormatException e) {
-            throw new DukeException("Eh give an index number after delete leh");
+            throw new DavidException("Eh give an index number after delete leh");
         }
     }
 
@@ -25,10 +24,10 @@ public class DeleteCommand extends Command {
      * @param tasks List of Tasks.
      * @param ui User interface of chatbot.
      * @param storage User's data storage.
-     * @throws DukeException If the user does not provide an index after delete.
+     * @throws DavidException If the user does not provide an index after delete.
      */
     @Override
-    public String execute(TaskList tasks, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = tasks.deleteTask(index);
         //ui.showMessage("Ok I this task kenna remove liao:\n" + task);
         storage.save(tasks);

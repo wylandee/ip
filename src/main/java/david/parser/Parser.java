@@ -9,7 +9,7 @@ import david.command.FindCommand;
 import david.command.ListCommand;
 import david.command.MarkCommand;
 import david.command.TodoCommand;
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.exception.NoCommandException;
 
 /**
@@ -20,9 +20,9 @@ public class Parser {
      * Processes the command string and decides which command to execute.
      * @param fullCommand Command string.
      * @return Command.
-     * @throws DukeException If command does not exist in the given list of commands.
+     * @throws DavidException If command does not exist in the given list of commands.
      */
-    public static Command parse(String fullCommand) throws DukeException {
+    public static Command parse(String fullCommand) throws DavidException {
         String[] parts = fullCommand.split(" ", 2);
         String commandWord = parts[0];
         String args;

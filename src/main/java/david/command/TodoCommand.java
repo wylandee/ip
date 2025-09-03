@@ -1,12 +1,11 @@
 package david.command;
 
-import david.exception.DukeException;
+import david.exception.DavidException;
 import david.exception.TodoException;
 import david.storage.Storage;
 import david.task.Task;
 import david.task.TaskList;
 import david.task.Todo;
-import david.ui.Ui;
 
 /**
  * Represents a command to create a Todo task.
@@ -14,7 +13,7 @@ import david.ui.Ui;
 public class TodoCommand extends Command {
     private String description;
 
-    public TodoCommand(String args) throws DukeException {
+    public TodoCommand(String args) throws DavidException {
         if (args.trim().isEmpty()) {
             throw new TodoException("todo what leh? Don't leave the task empty can or not?");
         }
@@ -26,10 +25,10 @@ public class TodoCommand extends Command {
      * @param tasks List of Tasks.
      * @param ui User interface of chatbot.
      * @param storage User's data storage.
-     * @throws DukeException If user does not provide task description.
+     * @throws DavidException If user does not provide task description.
      */
     @Override
-    public String execute(TaskList tasks, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Todo(description);
         tasks.addTask(task);
         //ui.showMessage("    I add this task liao:\n    " + task);
