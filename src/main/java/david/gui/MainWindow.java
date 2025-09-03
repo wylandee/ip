@@ -32,6 +32,9 @@ public class MainWindow extends AnchorPane {
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
+        dialogContainer.getChildren().addAll(
+                DialogBox.getDukeDialog("    Eh David here\n    What you want me do for you?", dukeImage)
+        );
     }
 
     /** Injects the David instance */
@@ -54,6 +57,9 @@ public class MainWindow extends AnchorPane {
                     DialogBox.getDukeDialog(response, dukeImage)
             );
             userInput.clear();
+            if (c.isExit()) {
+                javafx.application.Platform.exit();
+            }
         } catch (DavidException e) {
             String input = userInput.getText();
             dialogContainer.getChildren().addAll(
