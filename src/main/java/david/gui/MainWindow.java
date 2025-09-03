@@ -50,14 +50,19 @@ public class MainWindow extends AnchorPane {
         try {
             String input = userInput.getText();
             Command c = Parser.parse(input);
-            String response = david.getResponse(c.execute(david.getTaskList(), david.getStorage()));
+            String response = c.execute(david.getTaskList(), david.getStorage());
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),
                     DialogBox.getDukeDialog(response, dukeImage)
             );
             userInput.clear();
-        } catch (DukeException d) {
-            d.getMessage();
+        } catch (DukeException e) {
+            String input = userInput.getText();
+            dialogContainer.getChildren().addAll(
+                    DialogBox.getUserDialog(input, userImage),
+                    DialogBox.getDukeDialog(e.getMessage(), dukeImage)
+            );
+            userInput.clear();
         }
 
     }
