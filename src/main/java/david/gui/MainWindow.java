@@ -27,13 +27,13 @@ public class MainWindow extends AnchorPane {
     private David david;
 
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Image davidImage = new Image(this.getClass().getResourceAsStream("/images/DaDavid.png"));
 
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
         dialogContainer.getChildren().addAll(
-                DialogBox.getDukeDialog("    Eh David here\n    What you want me do for you?", dukeImage)
+                DialogBox.getDukeDialog("    Eh David here\n    What you want me do for you?", davidImage)
         );
     }
 
@@ -54,7 +54,7 @@ public class MainWindow extends AnchorPane {
             String response = c.execute(david.getTaskList(), david.getStorage());
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),
-                    DialogBox.getDukeDialog(response, dukeImage)
+                    DialogBox.getDukeDialog(response, davidImage)
             );
             userInput.clear();
             if (c.isExit()) {
@@ -64,7 +64,7 @@ public class MainWindow extends AnchorPane {
             String input = userInput.getText();
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),
-                    DialogBox.getDukeDialog(e.getMessage(), dukeImage)
+                    DialogBox.getDukeDialog(e.getMessage(), davidImage)
             );
             userInput.clear();
         }
