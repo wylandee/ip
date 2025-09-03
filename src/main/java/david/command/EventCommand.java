@@ -40,10 +40,11 @@ public class EventCommand extends Command {
      * @throws DukeException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         Task task = new Event(description, from, to);
         tasks.addTask(task);
-        ui.showMessage("    I add this david.task liao:\n    " + task);
+        //ui.showMessage("    I add this david.task liao:\n    " + task);
         storage.save(tasks);
+        return     "I add this david.task liao:\n    " + task;
     }
 }

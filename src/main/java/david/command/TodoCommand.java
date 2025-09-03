@@ -29,10 +29,11 @@ public class TodoCommand extends Command {
      * @throws DukeException If user does not provide task description.
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         Task task = new Todo(description);
         tasks.addTask(task);
-        ui.showMessage("    I add this task liao:\n    " + task);
+        //ui.showMessage("    I add this task liao:\n    " + task);
         storage.save(tasks);
+        return "    I add this task liao:\n    " + task;
     }
 }

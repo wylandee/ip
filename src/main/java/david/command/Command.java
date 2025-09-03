@@ -16,7 +16,7 @@ public abstract class Command {
      * @param storage User's data storage.
      * @throws DukeException If command input is invalid.
      */
-    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException;
+    public abstract String execute(TaskList tasks, Storage storage) throws DukeException;
 
     /**
      * Makes sure chatbot does not stop.

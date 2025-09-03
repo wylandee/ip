@@ -18,12 +18,14 @@ public class FindCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         TaskList tl = tasks.findTasks(keyword);
         if (tl.size() == 0) {
-            ui.showMessage("    Bro you sure you search the write word? No results leh.");
+            //ui.showMessage("    Bro you sure you search the write word? No results leh.");
+            return "    Bro you sure you search the write word? No results leh.";
         } else {
-            ui.showMessage("    Eh here is your matching tasks ok, I took very long to find:\n" + tl);
+            //ui.showMessage("    Eh here is your matching tasks ok, I took very long to find:\n" + tl);
+            return "    Eh here is your matching tasks ok, I took very long to find:\n" + tl;
         }
     }
 }

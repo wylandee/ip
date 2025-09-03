@@ -28,10 +28,11 @@ public class MarkCommand extends Command {
      * @throws DukeException If the user does not provide an index after mark.
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         Task task = tasks.getTask(index);
         tasks.markAsDone(index);
-        ui.showMessage("    Ok I mark as done liao:\n    " + task);
+        //ui.showMessage("    Ok I mark as done liao:\n    " + task);
         storage.save(tasks);
+        return "    Ok I mark as done liao:\n    " + task;
     }
 }

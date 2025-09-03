@@ -32,10 +32,11 @@ public class DeadlineCommand extends Command {
      * @throws DukeException If the user's input does not follow the deadline format: deadline <task> /by <end>.
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         Task task = new Deadline(description, by);
         tasks.addTask(task);
-        ui.showMessage("    I add this task liao:\n    " + task);
+        //ui.showMessage("    I add this task liao:\n    " + task);
         storage.save(tasks);
+        return "    I add this task liao:\n    " + task;
     }
 }

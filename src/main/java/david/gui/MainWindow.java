@@ -1,6 +1,11 @@
 package david.gui;
 
 import david.David;
+import david.command.Command;
+import david.exception.DukeException;
+import david.parser.Parser;
+import david.storage.Storage;
+import david.task.TaskList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -31,8 +36,8 @@ public class MainWindow extends AnchorPane {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
     }
 
-    /** Injects the Duke instance */
-    public void setDuke(David d) {
+    /** Injects the David instance */
+    public void setDavid(David d) {
         david = d;
     }
 
@@ -42,12 +47,18 @@ public class MainWindow extends AnchorPane {
      */
     @FXML
     private void handleUserInput() {
-        String input = userInput.getText();
-        String response = david.getResponse(input);
-        dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(input, userImage),
-                DialogBox.getDukeDialog(response, dukeImage)
-        );
-        userInput.clear();
+        try {
+            String input = userInput.getText();
+            Command c = Parser.parse(input);
+            String response = david.getResponse(c.execute(david.getTaskList(), david.getStorage()));
+            dialogContainer.getChildren().addAll(
+                    DialogBox.getUserDialog(input, userImage),
+                    DialogBox.getDukeDialog(response, dukeImage)
+            );
+            userInput.clear();
+        } catch (DukeException d) {
+            d.getMessage();
+        }
+
     }
 }

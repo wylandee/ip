@@ -32,7 +32,7 @@ public class David {
                 String fullCommand = ui.readCommand();
                 ui.showLine();
                 Command c = Parser.parse(fullCommand);
-                c.execute(tasks, ui, storage);
+                //c.execute(tasks, ui, storage);
                 ui.showLine();
                 isExit = c.isExit();
             } catch (DukeException e) {
@@ -43,6 +43,14 @@ public class David {
 
     public String getResponse(String input) {
         return "David heard: " + input;
+    }
+
+    public Storage getStorage() {
+        return this.storage;
+    }
+
+    public TaskList getTaskList() {
+        return this.tasks;
     }
 
     public static void main(String[] args) {

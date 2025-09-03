@@ -28,9 +28,10 @@ public class DeleteCommand extends Command {
      * @throws DukeException If the user does not provide an index after delete.
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public String execute(TaskList tasks, Storage storage) throws DukeException {
         Task task = tasks.deleteTask(index);
-        ui.showMessage("Ok I this task kenna remove liao:\n" + task);
+        //ui.showMessage("Ok I this task kenna remove liao:\n" + task);
         storage.save(tasks);
+        return "Ok I this task kenna remove liao:\n" + task;
     }
 }
