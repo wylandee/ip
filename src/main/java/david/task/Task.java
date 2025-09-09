@@ -7,6 +7,10 @@ public class Task {
     private String text;
     private boolean isDone;
 
+    /**
+     * Initialise a normal Task.
+     * @param text Task description
+     */
     public Task(String text) {
         this.text = text;
         this.isDone = false;

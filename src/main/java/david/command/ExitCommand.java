@@ -10,6 +10,7 @@ public class ExitCommand extends Command {
     /**
      * Gets Ui to show goodbye message.
      * @param tasks List of Tasks.
+     * @return Text to be displayed.
      * @param storage User's data storage.
      */
     @Override

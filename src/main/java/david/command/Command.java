@@ -12,6 +12,7 @@ public abstract class Command {
      * Executes logic of specific command
      * @param tasks List of Tasks.
      * @param storage User's data storage.
+     * @return Text to be displayed.
      * @throws DavidException If command input is invalid.
      */
     public abstract String execute(TaskList tasks, Storage storage) throws DavidException;

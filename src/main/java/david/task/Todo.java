@@ -5,6 +5,10 @@ package david.task;
  */
 public class Todo extends Task {
 
+    /**
+     * Initialise a Todo task.
+     * @param text Task description.
+     */
     public Todo(String text) {
         super(text);
     }

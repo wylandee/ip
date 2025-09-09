@@ -23,8 +23,13 @@ import david.task.Todo;
 public class Storage {
     private final Path filePath;
 
+    /**
+     * Initialise a Storage object.
+     * @param filePath File path of data file
+     */
     public Storage(String filePath) {
         this.filePath = Paths.get(filePath);
+
         checkFileAndFolderExists();
     }
 
@@ -50,6 +55,7 @@ public class Storage {
      */
     public ArrayList<Task> load() {
         ArrayList<Task> tasks = new ArrayList<>();
+
         try (BufferedReader br = new BufferedReader(new FileReader(filePath.toFile()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -115,6 +121,7 @@ public class Storage {
      */
     private String formatTask(Task t) {
         String status = t.isDone() ? "1" : "0";
+
         DateTimeFormatter saveFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
 
         if (t instanceof Todo) {

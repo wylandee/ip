@@ -10,8 +10,15 @@ public class Event extends Task {
     private LocalDateTime from;
     private LocalDateTime to;
 
+    /**
+     * Initialise an Event Task.
+     * @param text Task description
+     * @param from Task start datetime
+     * @param to Task end datetime
+     */
     public Event(String text, String from, String to) {
         super(text);
+
         DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
         this.from = LocalDateTime.parse(from, inputFormat);
         this.to = LocalDateTime.parse(to, inputFormat);
