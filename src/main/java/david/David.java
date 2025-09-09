@@ -15,6 +15,7 @@ public class David {
      * @param filePath File path of storage file
      */
     public David(String filePath) {
+        assert filePath != null : "filePath should never be null";
         storage = new Storage(filePath);
         tasks = new TaskList(storage);
     }

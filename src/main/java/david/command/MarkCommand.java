@@ -33,6 +33,7 @@ public class MarkCommand extends Command {
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = tasks.getTask(index);
+        assert task != null : "Task should never be null";
         tasks.markAsDone(index);
         storage.save(tasks);
         return "    Ok I mark as done liao:\n    " + task;

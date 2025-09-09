@@ -12,6 +12,7 @@ public class Task {
      * @param text Task description
      */
     public Task(String text) {
+        assert text != null : "Text should never be null";
         this.text = text;
         this.isDone = false;
     }

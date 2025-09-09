@@ -34,6 +34,10 @@ public class EventCommand extends Command {
         this.description = parts[0].trim();
         this.from = times[0].trim();
         this.to = times[1].trim();
+
+        assert description != null && !description.isEmpty() : "Description should not be null or empty";
+        assert from != null && !from.isEmpty() : "From datetime should not be null or empty";
+        assert to != null && !to.isEmpty() : "To datetime should not be null or empty";
     }
 
     /**

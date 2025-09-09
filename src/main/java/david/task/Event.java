@@ -19,6 +19,9 @@ public class Event extends Task {
     public Event(String text, String from, String to) {
         super(text);
 
+        assert from!= null : "From should never be null";
+        assert to!= null : "To should never be null";
+
         DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
         this.from = LocalDateTime.parse(from, inputFormat);
         this.to = LocalDateTime.parse(to, inputFormat);

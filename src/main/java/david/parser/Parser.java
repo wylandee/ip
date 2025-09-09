@@ -23,6 +23,7 @@ public class Parser {
      * @throws DavidException If command does not exist in the given list of commands.
      */
     public static Command parse(String fullCommand) throws DavidException {
+        assert fullCommand!= null : "Full command should never be null";
         String[] parts = fullCommand.split(" ", 2);
         String commandWord = parts[0];
         String args;
