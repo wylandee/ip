@@ -15,6 +15,11 @@ public class EventCommand extends Command {
     private String from;
     private String to;
 
+    /**
+     * Initialise a command for an Event Task.
+     * @param args User input.
+     * @throws DavidException If input is not in valid format
+     */
     public EventCommand(String args) throws DavidException {
         String[] parts = args.split("/from", 2);
         if (parts.length < 2) {
@@ -39,6 +44,7 @@ public class EventCommand extends Command {
      * Creates an Event task and adds it into the user's TaskList.
      * @param tasks List of Tasks.
      * @param storage User's data storage.
+     * @return Text to be displayed.
      * @throws DavidException If the user's input does not follow the deadline format: event <task> /from <start> /to <end>
      */
     @Override

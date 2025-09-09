@@ -54,16 +54,19 @@ public class MainWindow extends AnchorPane {
             String input = userInput.getText();
             Command c = Parser.parse(input);
             String response = c.execute(david.getTaskList(), david.getStorage());
+
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),
                     DialogBox.getDukeDialog(response, davidImage)
             );
             userInput.clear();
+
             if (c.isExit()) {
                 javafx.application.Platform.exit();
             }
         } catch (DavidException e) {
             String input = userInput.getText();
+
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),
                     DialogBox.getDukeDialog(e.getMessage(), davidImage)

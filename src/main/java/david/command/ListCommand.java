@@ -8,8 +8,9 @@ import david.task.TaskList;
  */
 public class ListCommand extends Command {
     /**
-     * Gets Ui to show TaskList.
-     * @param tasks List of Tasks.
+     * Prints details of TaskList.
+     * @param tasks List of Tasks
+     * @return Text to be displayed.
      * @param storage User's data storage.
      */
     @Override

@@ -11,14 +11,21 @@ public class TaskList {
     private ArrayList<Task> items;
     private Storage storage;
 
+    /**
+     * Initialise a TaskList from a storage object.
+     * @param storage Storage
+     */
     public TaskList(Storage storage) {
         assert storage != null : "storage should never be null";
         this.storage = storage;
-        items = new ArrayList<>(this.storage.load());
+        this.items = new ArrayList<>(this.storage.load());
     }
 
+    /**
+     * Initialise an empty TaskList
+     */
     public TaskList() {
-        items = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     /**
@@ -26,7 +33,7 @@ public class TaskList {
      * @param task Task
      */
     public void addTask(Task task) {
-        items.add(task);
+        this.items.add(task);
     }
 
     public Task getTask(int i) {
@@ -35,7 +42,7 @@ public class TaskList {
     }
 
     public ArrayList<Task> getTasks() {
-        return items;
+        return this.items;
     }
 
     /**
@@ -52,7 +59,7 @@ public class TaskList {
      * @return deleted Task.
      */
     public Task deleteTask(int i) {
-        Task deleted = items.remove(i - 1);
+        Task deleted = this.items.remove(i - 1);
         assert deleted != null : "Deleted task should never be null";
         return deleted;
     }
@@ -66,6 +73,11 @@ public class TaskList {
         this.getTask(i).markAsDone();
     }
 
+    /**
+     * Find Tasks that match the given keyword.
+     * @param keyword Keyword
+     * @return A TaskList containing matching Tasks.
+     */
     public TaskList findTasks(String keyword) {
         TaskList temp = new TaskList();
 
