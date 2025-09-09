@@ -14,6 +14,7 @@ public class FindCommand extends Command {
             throw new FindException("Find what leh? Don't leave the keyword empty can or not?");
         }
         this.keyword = args.trim();
+        assert keyword != null && !keyword.isEmpty() : "Keyword should not be null or empty";
     }
 
     @Override

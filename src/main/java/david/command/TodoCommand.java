@@ -18,6 +18,8 @@ public class TodoCommand extends Command {
             throw new TodoException("todo what leh? Don't leave the task empty can or not?");
         }
         this.description = args.trim();
+
+        assert description != null && !description.isEmpty() : "Deadline description should not be null or empty";
     }
 
     /**
@@ -29,6 +31,7 @@ public class TodoCommand extends Command {
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Todo(description);
+        assert task != null : "Task should never be null";
         tasks.addTask(task);
         storage.save(tasks);
         return "    I add this task liao:\n    " + task;

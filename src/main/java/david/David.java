@@ -11,6 +11,7 @@ public class David {
     private TaskList tasks;
 
     public David(String filePath) {
+        assert filePath != null : "filePath should never be null";
         storage = new Storage(filePath);
         tasks = new TaskList(storage);
     }
