@@ -8,6 +8,7 @@ public class Task {
     private boolean isDone;
 
     public Task(String text) {
+        assert text != null : "Text should never be null";
         this.text = text;
         this.isDone = false;
     }

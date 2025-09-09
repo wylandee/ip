@@ -21,6 +21,9 @@ public class DeadlineCommand extends Command {
         }
         this.description = parts[0].trim();
         this.by = parts[1].trim();
+
+        assert description != null && !description.isEmpty() : "Deadline description should not be null or empty";
+        assert by != null && !by.isEmpty() : "By datetime should not be null or empty";
     }
 
     /**
@@ -32,6 +35,7 @@ public class DeadlineCommand extends Command {
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
         Task task = new Deadline(description, by);
+        assert task != null : "Task should never be null";
         tasks.addTask(task);
         storage.save(tasks);
         return "    I add this task liao:\n    " + task;

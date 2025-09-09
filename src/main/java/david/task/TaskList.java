@@ -12,6 +12,7 @@ public class TaskList {
     private Storage storage;
 
     public TaskList(Storage storage) {
+        assert storage != null : "storage should never be null";
         this.storage = storage;
         items = new ArrayList<>(this.storage.load());
     }
@@ -29,6 +30,7 @@ public class TaskList {
     }
 
     public Task getTask(int i) {
+        assert i >= 0 && i < items.size() : "Index should never be out of bounds";
         return items.get(i - 1);
     }
 
@@ -51,6 +53,7 @@ public class TaskList {
      */
     public Task deleteTask(int i) {
         Task deleted = items.remove(i - 1);
+        assert deleted != null : "Deleted task should never be null";
         return deleted;
     }
 
@@ -59,6 +62,7 @@ public class TaskList {
      * @param i index of Task
      */
     public void markAsDone(int i) {
+        assert i >= 0 && i < items.size() : "Index should never be out of bounds";
         this.getTask(i).markAsDone();
     }
 

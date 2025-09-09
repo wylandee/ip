@@ -24,6 +24,7 @@ public class Storage {
     private final Path filePath;
 
     public Storage(String filePath) {
+        assert filePath!= null : "Filepath should never be null";
         this.filePath = Paths.get(filePath);
         checkFileAndFolderExists();
     }
@@ -61,6 +62,7 @@ public class Storage {
         } catch (IOException e) {
             System.err.println("Eh you got an error loading the tasks:" + e.getMessage());
         }
+        assert tasks != null : "Loaded tasks should never be null";
         return tasks;
     }
 
@@ -70,6 +72,7 @@ public class Storage {
      * @return Task in the specific task type
      */
     private Task parseTask(String line) {
+        assert line != null : "Line should never be null";
         String[] parts = line.split(" \\| ");
         String taskType = parts[0];
         boolean isDone = parts[1].equals("1");
@@ -98,6 +101,7 @@ public class Storage {
      * @param tl User's current TaskList.
      */
     public void save(TaskList tl) {
+        assert tl != null : "TaskList should never be null";
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath.toFile()))) {
             for (Task t : tl.getTasks()) {
                 bw.write(formatTask(t));
@@ -114,6 +118,7 @@ public class Storage {
      * @return String of task in save data format.
      */
     private String formatTask(Task t) {
+        assert t != null : "Task should never be null";
         String status = t.isDone() ? "1" : "0";
         DateTimeFormatter saveFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
 
@@ -126,6 +131,7 @@ public class Storage {
             Event e = (Event) t;
             return "E | " + status + " | " + e.getText() + " | " + e.getFrom().format(saveFormat) + " | " + e.getTo().format(saveFormat);
         }
+        assert false : "Code should never reach here";
         return "";
     }
 }
