@@ -29,5 +29,7 @@ public abstract class Command {
         return false;
     }
 
-    public abstract void undo(TaskList tasks, Storage storage) throws DavidException;
+    public void undo(TaskList tasks, Storage storage) throws DavidException {
+        throw new DavidException("Undo command cannot be undone leh");
+    };
 }
