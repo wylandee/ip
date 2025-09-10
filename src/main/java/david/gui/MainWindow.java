@@ -54,6 +54,7 @@ public class MainWindow extends AnchorPane {
             String input = userInput.getText();
             Command c = Parser.parse(input);
             String response = c.execute(david.getTaskList(), david.getStorage());
+            david.getHistory().add(c);
 
             dialogContainer.getChildren().addAll(
                     DialogBox.getUserDialog(input, userImage),

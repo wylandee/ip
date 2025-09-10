@@ -1,5 +1,6 @@
 package david;
 
+import david.command.CommandHistory;
 import david.storage.Storage;
 import david.task.TaskList;
 
@@ -9,6 +10,7 @@ import david.task.TaskList;
 public class David {
     private Storage storage;
     private TaskList tasks;
+    private CommandHistory history;
 
     /**
      * Initialise the David chatbot.
@@ -18,6 +20,7 @@ public class David {
         assert filePath != null : "filePath should never be null";
         storage = new Storage(filePath);
         tasks = new TaskList(storage);
+        history = new CommandHistory();
     }
 
     public Storage getStorage() {
@@ -26,5 +29,9 @@ public class David {
 
     public TaskList getTaskList() {
         return this.tasks;
+    }
+
+    public CommandHistory getHistory() {
+        return this.history;
     }
 }
