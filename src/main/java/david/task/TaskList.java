@@ -73,6 +73,11 @@ public class TaskList {
         this.getTask(i).markAsDone();
     }
 
+    public void markAsUndone(int i) {
+        assert i >= 0 && i < items.size() : "Index should never be out of bounds";
+        this.getTask(i).markAsUndone();
+    }
+
     /**
      * Find Tasks that match the given keyword.
      * @param keyword Keyword
