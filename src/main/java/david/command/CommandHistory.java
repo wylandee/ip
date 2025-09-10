@@ -7,7 +7,11 @@ import david.storage.Storage;
 import david.task.TaskList;
 
 public class CommandHistory {
-    private Stack<Command> history = new Stack<>();
+    private Stack<Command> history;
+
+    public CommandHistory() {
+        this.history = new Stack<>();
+    }
 
     public void add(Command c) {
         if (c.isUndoable()) {
