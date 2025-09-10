@@ -24,4 +24,10 @@ public abstract class Command {
     public boolean isExit() {
         return false;
     };
+
+    public boolean isUndoable() {
+        return false;
+    }
+
+    public abstract void undo(TaskList tasks, Storage storage) throws DavidException;
 }
