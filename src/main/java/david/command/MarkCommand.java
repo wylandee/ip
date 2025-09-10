@@ -38,4 +38,15 @@ public class MarkCommand extends Command {
         storage.save(tasks);
         return "    Ok I mark as done liao:\n    " + task;
     }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
+    }
+
+    @Override
+    public void undo(TaskList tasks, Storage storage) throws DavidException {
+        tasks.markAsUndone(index);
+        storage.save(tasks);
+    }
 }

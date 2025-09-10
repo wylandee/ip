@@ -1,6 +1,7 @@
 package david.parser;
 
 import david.command.Command;
+import david.command.CommandHistory;
 import david.command.DeadlineCommand;
 import david.command.DeleteCommand;
 import david.command.EventCommand;
@@ -9,6 +10,7 @@ import david.command.FindCommand;
 import david.command.ListCommand;
 import david.command.MarkCommand;
 import david.command.TodoCommand;
+import david.command.UndoCommand;
 import david.exception.DavidException;
 import david.exception.NoCommandException;
 
@@ -22,7 +24,7 @@ public class Parser {
      * @return Command.
      * @throws DavidException If command does not exist in the given list of commands.
      */
-    public static Command parse(String fullCommand) throws DavidException {
+    public static Command parse(String fullCommand, CommandHistory history) throws DavidException {
         assert fullCommand!= null : "Full command should never be null";
         String[] parts = fullCommand.split(" ", 2);
         String commandWord = parts[0];
@@ -49,6 +51,8 @@ public class Parser {
         case "find":
             args = (parts.length < 2 ? "" : parts[1]);
             return new FindCommand(args);
+        case "undo":
+            return new UndoCommand(history);
         case "bye":
             return new ExitCommand();
         default:

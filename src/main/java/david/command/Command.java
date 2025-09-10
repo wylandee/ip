@@ -24,4 +24,12 @@ public abstract class Command {
     public boolean isExit() {
         return false;
     };
+
+    public boolean isUndoable() {
+        return false;
+    }
+
+    public void undo(TaskList tasks, Storage storage) throws DavidException {
+        throw new DavidException("This command cannot be undone leh");
+    };
 }

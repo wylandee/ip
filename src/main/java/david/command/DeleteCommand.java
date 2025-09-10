@@ -10,6 +10,7 @@ import david.task.TaskList;
  */
 public class DeleteCommand extends Command {
     private int index;
+    private Task deletedTask;
 
     /**
      * Initialise a command to delete a Task.
@@ -33,8 +34,19 @@ public class DeleteCommand extends Command {
      */
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
-        Task task = tasks.deleteTask(index);
+        this.deletedTask = tasks.deleteTask(index);
         storage.save(tasks);
-        return "Ok I this task kenna remove liao:\n" + task;
+        return "Ok I this task kenna remove liao:\n" + this.deletedTask;
+    }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
+    }
+
+    @Override
+    public void undo(TaskList tasks, Storage storage){
+        tasks.insertTask(this.index, this.deletedTask);
+        storage.save(tasks);
     }
 }
