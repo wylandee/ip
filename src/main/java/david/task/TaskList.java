@@ -69,12 +69,12 @@ public class TaskList {
      * @param i index of Task
      */
     public void markAsDone(int i) {
-        assert i >= 0 && i < items.size() : "Index should never be out of bounds";
+        assert i >= 0 && i < items.size() + 1 : "Index should never be out of bounds";
         this.getTask(i).markAsDone();
     }
 
     public void markAsUndone(int i) {
-        assert i >= 0 && i < items.size() : "Index should never be out of bounds";
+        assert i >= 0 && i < items.size() + 1: "Index should never be out of bounds";
         this.getTask(i).markAsUndone();
     }
 
