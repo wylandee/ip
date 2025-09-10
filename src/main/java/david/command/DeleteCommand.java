@@ -47,5 +47,6 @@ public class DeleteCommand extends Command {
     @Override
     public void undo(TaskList tasks, Storage storage){
         tasks.insertTask(this.index, this.deletedTask);
+        storage.save(tasks);
     }
 }

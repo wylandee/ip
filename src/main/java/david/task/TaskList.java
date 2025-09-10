@@ -94,7 +94,7 @@ public class TaskList {
     }
 
     public void insertTask(int i, Task task) {
-        this.items.add(i, task);
+        this.items.add(i - 1, task);
     }
 
     @Override
