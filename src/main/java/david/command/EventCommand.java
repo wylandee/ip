@@ -54,4 +54,15 @@ public class EventCommand extends Command {
         storage.save(tasks);
         return     "I add this david.task liao:\n    " + task;
     }
+
+    @Override
+    public boolean isUndoable() {
+        return true;
+    }
+
+    @Override
+    public void undo(TaskList tasks, Storage storage) throws DavidException {
+        tasks.deleteTask(tasks.size());
+        storage.save(tasks);
+    }
 }
