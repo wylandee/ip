@@ -52,7 +52,7 @@ public class MainWindow extends AnchorPane {
     private void handleUserInput() {
         try {
             String input = userInput.getText();
-            Command c = Parser.parse(input);
+            Command c = Parser.parse(input, david.getHistory());
             String response = c.execute(david.getTaskList(), david.getStorage());
             david.getHistory().add(c);
 
