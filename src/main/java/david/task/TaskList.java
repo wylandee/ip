@@ -93,6 +93,10 @@ public class TaskList {
         return temp;
     }
 
+    public void insertTask(int i, Task task) {
+        this.items.add(i, task);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
