@@ -52,7 +52,7 @@ public class EventCommand extends Command {
         Task task = new Event(description, from, to);
         tasks.addTask(task);
         storage.save(tasks);
-        return     "I add this david.task liao:\n    " + task;
+        return     "I add this task liao:\n    " + task;
     }
 
     @Override
