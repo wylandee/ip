@@ -11,10 +11,11 @@ public class Event extends Task {
     private LocalDateTime to;
 
     /**
-     * Initialise an Event Task.
-     * @param text Task description
-     * @param from Task start datetime
-     * @param to Task end datetime
+     * Initialises an Event Task.
+     *
+     * @param text Task description.
+     * @param from Task start datetime.
+     * @param to Task end datetime.
      */
     public Event(String text, String from, String to) {
         super(text);

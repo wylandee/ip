@@ -10,9 +10,9 @@ public class FindCommand extends Command {
     String keyword;
 
     /**
-     * Initialise a command to delete a Task.
+     * Initialises a command to delete a Task.
      * @param args User input.
-     * @throws DavidException If input is not in valid format
+     * @throws DavidException If input is not in valid format.
      */
     public FindCommand(String args) throws DavidException {
         if (args.trim().isEmpty()) {
@@ -24,6 +24,7 @@ public class FindCommand extends Command {
 
     /**
      * Finds the tasks which match the keyword.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.

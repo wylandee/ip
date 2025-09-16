@@ -14,9 +14,10 @@ public class TodoCommand extends Command {
     private String description;
 
     /**
-     * Initialise a command for a Todo Task.
+     * Initialises a command for a Todo Task.
+     *
      * @param args User input.
-     * @throws DavidException If input is not in valid format
+     * @throws DavidException If input is not in valid format.
      */
     public TodoCommand(String args) throws DavidException {
         if (args.trim().isEmpty()) {
@@ -29,6 +30,7 @@ public class TodoCommand extends Command {
 
     /**
      * Creates a Todo task and adds it into the user's TaskList.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.

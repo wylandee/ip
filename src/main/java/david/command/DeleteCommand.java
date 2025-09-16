@@ -13,9 +13,10 @@ public class DeleteCommand extends Command {
     private Task deletedTask;
 
     /**
-     * Initialise a command to delete a Task.
+     * Initialises a command to delete a Task.
+     *
      * @param args User input.
-     * @throws DavidException If input is not in valid format
+     * @throws DavidException If input is not in valid format.
      */
     public DeleteCommand(String args) throws DavidException {
         try {
@@ -27,6 +28,7 @@ public class DeleteCommand extends Command {
 
     /**
      * Deletes the Task at the given in the user's TaskList.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.

@@ -4,15 +4,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Represents a Task with a deadline
+ * Represents a Task with a deadline.
  */
 public class Deadline extends Task {
     private LocalDateTime by;
 
     /**
-     * Initialise a Deadline task.
-     * @param text Task description
-     * @param by Task end DateTime
+     * Initialises a Deadline task.
+     *
+     * @param text Task description.
+     * @param by Task end DateTime.
      */
     public Deadline(String text, String by) {
         super(text);

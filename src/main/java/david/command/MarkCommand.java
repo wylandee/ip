@@ -11,9 +11,10 @@ import david.task.TaskList;
 public class MarkCommand extends Command {
     private int index;
     /**
-     * Initialise a command to mark a Task as done.
+     * Initialises a command to mark a Task as done.
+     *
      * @param args User input.
-     * @throws DavidException If input is not in valid format
+     * @throws DavidException If input is not in valid format.
      */
     public MarkCommand(String args) throws DavidException {
         try {
@@ -25,6 +26,7 @@ public class MarkCommand extends Command {
 
     /**
      * Marks the task at given index in the user's TaskList as done.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.

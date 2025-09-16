@@ -1,7 +1,7 @@
 package david.exception;
 
 /**
- * Initialise a DavidException.
+ * Initialises a DavidException.
  */
 public class DavidException extends Exception {
     public DavidException(String message) {

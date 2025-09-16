@@ -12,8 +12,9 @@ public class TaskList {
     private Storage storage;
 
     /**
-     * Initialise a TaskList from a storage object.
-     * @param storage Storage
+     * Initialises a TaskList from a storage object.
+     *
+     * @param storage Storage.
      */
     public TaskList(Storage storage) {
         assert storage != null : "storage should never be null";
@@ -22,7 +23,7 @@ public class TaskList {
     }
 
     /**
-     * Initialise an empty TaskList
+     * Initialises an empty TaskList.
      */
     public TaskList() {
         this.items = new ArrayList<>();
@@ -30,7 +31,7 @@ public class TaskList {
 
     /**
      * Adds a Task into the list.
-     * @param task Task
+     * @param task Task.
      */
     public void addTask(Task task) {
         this.items.add(task);
@@ -47,6 +48,7 @@ public class TaskList {
 
     /**
      * Returns the number of Tasks in the list.
+     *
      * @return Number of Tasks in list.
      */
     public int size() {
@@ -55,7 +57,8 @@ public class TaskList {
 
     /**
      * Deletes the Task at index i - 1, returns the deleted Task.
-     * @param i index of Task
+     *
+     * @param i index of Task.
      * @return deleted Task.
      */
     public Task deleteTask(int i) {
@@ -66,7 +69,8 @@ public class TaskList {
 
     /**
      * Mark Task in list as done.
-     * @param i index of Task
+     *
+     * @param i index of Task.
      */
     public void markAsDone(int i) {
         assert i >= 1 && i <= items.size() : "Index should never be out of bounds";
@@ -80,7 +84,8 @@ public class TaskList {
 
     /**
      * Find Tasks that match the given keyword.
-     * @param keyword Keyword
+     *
+     * @param keyword Keyword.
      * @return A TaskList containing matching Tasks.
      */
     public TaskList findTasks(String keyword) {

@@ -20,6 +20,7 @@ import david.exception.NoCommandException;
 public class Parser {
     /**
      * Processes the command string and decides which command to execute.
+     *
      * @param fullCommand Command string.
      * @return Command.
      * @throws DavidException If command does not exist in the given list of commands.

@@ -13,8 +13,9 @@ public class David {
     private CommandHistory history;
 
     /**
-     * Initialise the David chatbot.
-     * @param filePath File path of storage file
+     * Initialises the David chatbot.
+     *
+     * @param filePath File path of storage file/
      */
     public David(String filePath) {
         assert filePath != null : "filePath should never be null";

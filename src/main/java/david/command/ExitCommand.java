@@ -9,6 +9,7 @@ import david.task.TaskList;
 public class ExitCommand extends Command {
     /**
      * Gets Ui to show goodbye message.
+     *
      * @param tasks List of Tasks.
      * @return Text to be displayed.
      * @param storage User's data storage.
@@ -20,7 +21,8 @@ public class ExitCommand extends Command {
 
     /**
      * Makes chatbot end.
-     * @return True
+     *
+     * @return True.
      */
     @Override
     public boolean isExit() {

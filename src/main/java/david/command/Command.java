@@ -5,11 +5,12 @@ import david.storage.Storage;
 import david.task.TaskList;
 
 /**
- * Represents a command given by the user input
+ * Represents a command given by the user input.
  */
 public abstract class Command {
     /**
-     * Executes logic of specific command
+     * Executes logic of specific command.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.
@@ -19,6 +20,7 @@ public abstract class Command {
 
     /**
      * Makes sure chatbot does not stop.
+     *
      * @return False.
      */
     public boolean isExit() {

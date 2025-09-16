@@ -15,9 +15,10 @@ public class DeadlineCommand extends Command {
     private String by;
 
     /**
-     * Initialise a command for a Deadline Task.
+     * Initialises a command for a Deadline Task.
+     *
      * @param args User input.
-     * @throws DavidException If input is not in valid format
+     * @throws DavidException If input is not in valid format.
      */
     public DeadlineCommand(String args) throws DavidException {
         String[] parts = args.split("/by", 2);
@@ -34,6 +35,7 @@ public class DeadlineCommand extends Command {
 
     /**
      * Creates a Deadline task and adds it into the user's TaskList.
+     *
      * @param tasks List of Tasks.
      * @param storage User's data storage.
      * @return Text to be displayed.

@@ -1,15 +1,16 @@
 package david.task;
 
 /**
- * Represents a Task
+ * Represents a Task.
  */
 public class Task {
     private String text;
     private boolean isDone;
 
     /**
-     * Initialise a normal Task.
-     * @param text Task description
+     * Initialises a normal Task.
+     *
+     * @param text Task description.
      */
     public Task(String text) {
         assert text != null : "Text should never be null";

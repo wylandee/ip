@@ -24,8 +24,9 @@ public class Storage {
     private final Path filePath;
 
     /**
-     * Initialise a Storage object.
-     * @param filePath File path of data file
+     * Initialises a Storage object.
+     *
+     * @param filePath File path of data file.
      */
     public Storage(String filePath) {
         assert filePath!= null : "Filepath should never be null";
@@ -52,6 +53,7 @@ public class Storage {
 
     /**
      * Loads the users data from the previous session from data.txt.
+     *
      * @return The list of tasks from the user's previous sesssion.
      */
     public ArrayList<Task> load() {
@@ -74,8 +76,9 @@ public class Storage {
 
     /**
      * Process task string and create a new task based on the task type.
+     *
      * @param line Task string.
-     * @return Task in the specific task type
+     * @return Task in the specific task type.
      */
     private Task parseTask(String line) {
         assert line != null : "Line should never be null";
@@ -104,6 +107,7 @@ public class Storage {
 
     /**
      * Saves user's TaskList into data.txt.
+     *
      * @param tl User's current TaskList.
      */
     public void save(TaskList tl) {
@@ -120,7 +124,8 @@ public class Storage {
 
     /**
      * Formats the Task into the string format for saving into data.txt.
-     * @param t Task
+     *
+     * @param t Task.
      * @return String of task in save data format.
      */
     private String formatTask(Task t) {

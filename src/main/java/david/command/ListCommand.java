@@ -9,7 +9,8 @@ import david.task.TaskList;
 public class ListCommand extends Command {
     /**
      * Prints details of TaskList.
-     * @param tasks List of Tasks
+     *
+     * @param tasks List of Tasks.
      * @return Text to be displayed.
      * @param storage User's data storage.
      */
