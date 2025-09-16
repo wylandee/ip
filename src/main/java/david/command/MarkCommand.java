@@ -32,6 +32,9 @@ public class MarkCommand extends Command {
      */
     @Override
     public String execute(TaskList tasks, Storage storage) throws DavidException {
+        if (index > tasks.size()) {
+            throw new DavidException("Task " + index + " does not exist leh\n");
+        }
         Task task = tasks.getTask(index);
         assert task != null : "Task should never be null";
         tasks.markAsDone(index);
